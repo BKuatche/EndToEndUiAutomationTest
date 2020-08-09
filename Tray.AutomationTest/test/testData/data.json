@@ -1,0 +1,12 @@
+{
+    "UserName":"standard_user",
+    "Password":"secret_sauce",
+    "LoginPageTitle":"Swag Labs",
+    "SortByLowerPrice":"Price (high to low)",
+    "PartialCheckoutUrl":"checkout-step-one",
+    "PartialCartUrl":"cart",
+    "PartialInventoryUrl":"inventory",
+    "FirstName":"Berthe",
+    "LastName":"Kuatche",
+    "ZipCode":"SE6 4SN"
+}
