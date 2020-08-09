@@ -7,6 +7,7 @@ The framework is used to test end to end ui  using webdriverIO.
 1- Install Git  view the link https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
 2- Install Visual Studio code, please follow the instruction from the link https://code.visualstudio.com/download
+
 3- Create a github account
 
 
@@ -22,7 +23,7 @@ The framework is used to test end to end ui  using webdriverIO.
 
 ### Project structure
 
-## test
+## test folder
 
 * pageObjects folder: contains pages mapping in to classes.
 
