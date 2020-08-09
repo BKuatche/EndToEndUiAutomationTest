@@ -1,4 +1,5 @@
 const BasePage = require('./basePage');
+const CommonPage = require('../Common/commonPage');
 
 class InventoryPage extends BasePage {
 
@@ -22,7 +23,7 @@ class InventoryPage extends BasePage {
            return this;
     }
 
-    getPrices(){
+    getProductsPrices(){
         let prices = new Array();
 
         try {
@@ -39,7 +40,7 @@ class InventoryPage extends BasePage {
             return prices
 
            } catch (error) {
-               console.log(error.message)
+               console.log(error)
            }
 
     }
@@ -53,7 +54,7 @@ class InventoryPage extends BasePage {
             return result.getText();
         });
          
-        let minPrices = this.getMinPrices(this.getPrices(),2)
+        let minPrices = CommonPage.getMinPrices(this.getProductsPrices(),2)
 
         for (let index = 1; index <= totalElements.length; index++) {
         

@@ -6,7 +6,10 @@
     "PartialCheckoutUrl":"checkout-step-one",
     "PartialCartUrl":"cart",
     "PartialInventoryUrl":"inventory",
-    "FirstName":"Berthe",
-    "LastName":"Kuatche",
-    "ZipCode":"SE6 4SN"
+    "FirstName":"Davis",
+    "LastName":"Potter",
+    "ZipCode":"SN3 5MN",
+    "CheckoutTitle":"Checkout: Your Information",
+    "CartTitle":"Your Cart",
+    "CartPrices":["7.99","9.99"]
 }

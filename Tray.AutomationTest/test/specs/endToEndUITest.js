@@ -4,6 +4,7 @@ const { expect } = require('chai');
 const InventoryPage = require('../pageObjects/inventoryPage');
 const CartPage = require('../pageObjects/cartPage');
 const CheckoutPage = require('../pageObjects/checkoutPage');
+const CommonPage = require('../Common/commonPage');
 
 
 describe('validate that user is able to successfully add items to your basket and remove an item', () => {
@@ -33,15 +34,20 @@ describe('validate that user is able to successfully add items to your basket an
         //4. Open the basket
         InventoryPage.goToYourCartPage()
         expect(CartPage.getUrl()).to.contain(data.PartialCartUrl);
+        expect(CommonPage.getTitle()).to.equal(data.CartTitle);
+        expect(CartPage.getCartPrices().map(String).every(m =>data.CartPrices.includes(m))).to.be.true;
 
         //5. Remove the cheapest product from your basket and Checkout
         CartPage.doRemoveItemWithLowerPriceFromCart();
         expect(CartPage.getPriceCountDisplayed()).to.equal(1);
+        expect(CartPage.getCartPrices().map(String)[0]).to.contain(data.CartPrices[1]);
 
         CartPage.goToCheckoutPage();
         expect(CheckoutPage.getUrl()).to.contain(data.PartialCheckoutUrl);
+        expect(CommonPage.getTitle()).to.equal(data.CheckoutTitle);
 
-        //7. Finish on the page where you need to enter your name and postal code   
+        //7. Finish on the page where you need to enter your name and postal code 
+        // note that the name and postal code are testdata,i am not using my real name  
         CheckoutPage.doFillCheckoutInformation(data.FirstName,data.LastName,data.ZipCode)
         
     });
