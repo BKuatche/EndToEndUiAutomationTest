@@ -23,7 +23,7 @@ The framework is used to test end to end ui  using webdriverIO.
 
 ### Project structure
 
-## test folder
+#### test folder
 
 * pageObjects folder: contains pages mapping in to classes.
 
