@@ -25,8 +25,10 @@ The framework is used to test end to end ui  using webdriverIO.
 
 #### test folder
 
+* Common Folder: contains functions to be used through the entire project
+
 * pageObjects folder: contains pages mapping in to classes.
 
 * Steps folder: contains the end to end automation test.
 
-* testData Folders: contains test data to be used through the entire project.
+* testData Folder: contains test data to be used through the entire project.
