@@ -1,7 +1,7 @@
 const BasePage = require('./basePage');
 const CommonPage = require('../Common/commonPage');
 
-class InventoryPage extends BasePage {
+class ProductPage extends BasePage {
 
     get productSortContainer () { return $('select.product_sort_container') }
     get itemPrices () { return $$('div.inventory_item_price') }
@@ -100,4 +100,4 @@ class InventoryPage extends BasePage {
   }
 }
 
-module.exports = new InventoryPage();
+module.exports = new ProductPage();

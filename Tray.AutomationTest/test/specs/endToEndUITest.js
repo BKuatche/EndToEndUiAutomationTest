@@ -1,7 +1,7 @@
 const LoginPage = require('../pageObjects/loginPage');
 const data = require('../../test/testData/data.json');
 const { expect } = require('chai');
-const InventoryPage = require('../pageObjects/inventoryPage');
+const ProductPage = require('../pageObjects/productPage');
 const CartPage = require('../pageObjects/cartPage');
 const CheckoutPage = require('../pageObjects/checkoutPage');
 const CommonPage = require('../Common/commonPage');
@@ -24,15 +24,15 @@ describe('validate that user is able to successfully add items to your basket an
         expect(LoginPage.getUrl()).to.contain(data.PartialInventoryUrl);
 
         //2 - Sort the products by Price (high to low)
-        InventoryPage.DoSortProductBy(data.SortByLowerPrice);
-        expect(InventoryPage.isHighToLowPriceSelected()).to.be.true;
+        ProductPage.DoSortProductBy(data.SortByLowerPrice);
+        expect(ProductPage.isHighToLowPriceSelected()).to.be.true;
         
         //3. Add the two cheapest products to your basket
-        InventoryPage.AddToShoppingBasket()
-        expect(InventoryPage.getBasketItemCount()).to.equal("2");
+        ProductPage.AddToShoppingBasket()
+        expect(ProductPage.getBasketItemCount()).to.equal("2");
 
         //4. Open the basket
-        InventoryPage.goToYourCartPage()
+        ProductPage.goToYourCartPage()
         expect(CartPage.getUrl()).to.contain(data.PartialCartUrl);
         expect(CommonPage.getTitle()).to.equal(data.CartTitle);
         expect(CartPage.getCartPrices().map(String).every(m =>data.CartPrices.includes(m))).to.be.true;
